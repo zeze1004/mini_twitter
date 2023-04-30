@@ -69,7 +69,7 @@ def create_app(test_config=None):
     @login_required
     def tweet():
         user_tweet = request.json
-        user_tweet['id'] = g.user_id
+        user_tweet['id'] = g.user_id()
         tweet = user_tweet['tweet']
 
         if len(tweet) > 300:
@@ -111,4 +111,4 @@ def create_app(test_config=None):
 
 if __name__ == '__main__':
     app = create_app()
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=6000, debug=True)

@@ -36,6 +36,7 @@ def insert_user(user):
 
 
 def insert_tweet(user_tweet):
+    print(user_tweet.__repr__()) # dict 형태로 출력
     return current_app.database.execute(text("""
         INSERT INTO tweets (
             user_id,
